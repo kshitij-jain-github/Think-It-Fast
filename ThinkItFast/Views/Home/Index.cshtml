@@ -1,8 +1,98 @@
-﻿@{
+﻿@model ThinkItFast.Models.Candidate
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@Html.HiddenFor(c => c.Candidate_ID)
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+        <!-- Left Column -->
+        <div class="w3-col m3">
+            <!-- Profile -->
+            <div class="w3-card w3-round w3-white">
+                <div class="w3-container">
+                    <h4 class="w3-center">My Profile</h4>
+                    <p class="w3-center">
+                        @if (@Model.ImgFile != null)
+                        {
+                            <img src="~/UploadedFiles/Image/@Model.ImgFile" class="w3-circle" style="height:106px;width:106px" alt="Avatar" id="imgProfile">
+                        }
+                        else
+                        {
+                            <img src="https://www.w3schools.com/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar" id="imgProfile">
+                        }
+                    </p>
+                    <hr>
+                    <p><i class="fa fa-address-card fa-fw w3-margin-right w3-text-theme"></i><lable id="eqCandidateID">@Model.Candidate_ID</lable></p>
+                    <p><i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>@Model.Name</p>
+                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-text-theme"></i>@Model.Phone</p>
+                    <p><i class="fa fa-paper-plane fa-fw w3-margin-right w3-text-theme"></i>@Model.Email</p>
+                </div>
+            </div>
+            <br />
+            <!-- Alert Box -->
+            <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+                <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+                    <i class="fa fa-remove"></i>
+                </span>
+                <p><strong>Please Note !</strong></p>
+                <p style="color:red;">Preesing F5 at any time during the test will cause it to end immediately.</p>
+            </div>
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+            <div class="w3-row-padding" id="pnlExam">
+                <div class="w3-col m12">
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h6 class="w3-opacity">Select your skill & start the test. Good luck !</h6>
+                            <select class="w3-select w3-border" id="ddlExam"></select>
+                            <p><button type="button" id="btnStart" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Start</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-container w3-card w3-white w3-round w3-margin" id="eqMain">
+                <br>
+                <span class="w3-right w3-opacity" id="eqCount"></span>
+                <h3>Your test will start once you press the Start button.</h3>
+                <hr class="w3-clear">
+                <h4 style="color:red;" id="eqQuestion"></h4>
+                <p></p>
+                <button class="w3-button w3-block w3-blue" id="btnSave"><i class="fa fa-check"></i> Save</button>
+                <hr class="w3-clear">
+                <button id="btnPrev" type="button" class="w3-button w3-theme-d1 w3-margin-bottom w3-left"><i class="fa fa-angle-left"></i> Previous</button>
+                <button id="btnNext" type="button" class="w3-button w3-theme-d1 w3-margin-bottom w3-right">Next <i class="fa fa-angle-right"></i></button>
+            </div>
+            <!-- End Middle Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-col m2">
+            <div class="w3-card w3-round w3-white w3-center">
+                <div class="w3-container">
+                    <p>The entire session will be recorded</p>
+                    <video id="gum" playsinline autoplay muted style="border: 1px solid rgb(15, 158, 238); height: 120px; width: 100%;"></video>
+                    <p><strong>Recording</strong></p>
+                    <p id="timer">Time : 00:00:00</p>
+                    <p><button class="w3-button w3-block w3-theme-l4" id="btnSubmit">Submit</button></p>
+                </div>
+            </div>
+            <br />
+            <div class="w3-card w3-round w3-white w3-padding-32 w3-center" id="eqReport">
+                <p>
+                    <a><i class="fa fa-file-pdf-o w3-xxlarge" title="Download Score Report"></i></a>
+                </p>
+            </div>
+            <!-- End Right Column -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Page Container -->
 </div>
+<br />
