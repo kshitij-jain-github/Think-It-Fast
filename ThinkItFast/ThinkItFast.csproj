@@ -17,10 +17,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-    <Folder Include="Repository\Interfaces\" />
-    <Folder Include="Repository\Base\" />
-  </ItemGroup>
-
 </Project>
