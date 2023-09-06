@@ -5,6 +5,7 @@ using ThinkItFast.Enums;
 using ThinkItFast.Extensions;
 using ThinkItFast.Models;
 using ThinkItFast.Repository.Interfaces;
+using ThinkItFast.ViewModel;
 
 namespace ThinkItFast.Controllers
 {

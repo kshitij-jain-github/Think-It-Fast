@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DinkToPdf;
+using DinkToPdf.Contracts;
+using Microsoft.AspNetCore.Mvc;
 using ThinkItFast.Extensions;
 using ThinkItFast.Models;
+
 using ThinkItFast.Repository.Interfaces;
 
 namespace ThinkItFast.Controllers
@@ -10,9 +13,9 @@ namespace ThinkItFast.Controllers
     {
         private readonly IConverter _converter;
         private readonly ILogger<ScoreController> _logger;
-        private readonly IResult<Services.Entities.Result> _result;
+        private readonly IResult< Result> _result;
 
-        public ScoreController(ILogger<ScoreController> logger, IResult<Services.Entities.Result> result, IConverter converter)
+        public ScoreController(ILogger<ScoreController> logger, IResult< Result> result, IConverter converter)
         {
             _logger = logger;
             _result = result;
