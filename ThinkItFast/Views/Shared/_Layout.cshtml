@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ThinkItFast.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Open Sans", sans-serif
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,6 +40,34 @@
                 </div>
             </div>
         </nav>
+        <div class="w3-top">
+            <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                <a class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>EasyQuiz</a>
+                <a asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-book"></i> Quiz</a>
+                <a asp-controller="Score" asp-action="Result" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-server"></i> Score Report</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-cog"></i> Settings</button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                        <a asp-controller="Home" asp-action="Profile" class="w3-bar-item w3-button">Edit Profile</a>
+                    </div>
+                </div>
+
+                <a asp-action="Logout" asp-controller="Account" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Sign out">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+                </a>
+            </div>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a asp-controller="EasyQuiz" asp-action="Privacy" class="w3-bar-item w3-button w3-padding-large">EasyQuiz</a>
+            <a asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-padding-large">Home</a>
+            <a asp-controller="Home" asp-action="Profile" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+            <a asp-controller="Score" asp-action="Result" class="w3-bar-item w3-button w3-padding-large">Score Report</a>
+            <a asp-action="Logout" asp-controller="Account" class="w3-bar-item w3-button w3-padding-large">Sign out</a>
+        </div>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -36,14 +75,51 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - ThinkItFast - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-d3 w3-padding-16">
+        <marquee direction="left"><h6>Things to remember ! The test is not official, it's just a nice way to see how much you know, or don't know, about the skill.</h6></marquee>
     </footer>
+    <footer class="w3-container w3-theme-d5 w3-padding-16">
+        <h6>Developed by <a href="https://www.c-sharpcorner.com/members/arnab-mukherjee" target="_blank">Arnab Mukherjee</a></h6>
+    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <environment include="Development">
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    <script type="text/javascript">
+        // Accordion
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-theme-d1";
+            } else {
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+            }
+        }
+
+        // Used to toggle the menu on smaller screens when clicking on the menu button
+        function openNav() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+   
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
