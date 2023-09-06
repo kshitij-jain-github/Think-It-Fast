@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using ThinkItFast.Controllers;
 using ThinkItFast;
 using Microsoft.EntityFrameworkCore;
+using ThinkItFast.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 var connection = builder.Configuration.GetConnectionString("QuizDBConnection");
  builder.Services.AddDistributedMemoryCache();
+builder.Services.AddServices();
 builder.Services.AddSession();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
  builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
