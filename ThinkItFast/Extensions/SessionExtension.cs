@@ -1,4 +1,6 @@
-﻿namespace ThinkItFast.Extensions
+﻿using Newtonsoft.Json;
+
+namespace ThinkItFast.Extensions
 {
     public static class SessionExtension
     {

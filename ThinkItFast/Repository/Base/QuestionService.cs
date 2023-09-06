@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using ThinkItFast.Models;
+using ThinkItFast.Repository.Interfaces;
 
 namespace ThinkItFast.Repository.Base
 {
