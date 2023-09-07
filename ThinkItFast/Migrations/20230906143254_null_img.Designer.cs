@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThinkItFast;
 
@@ -11,9 +12,11 @@ using ThinkItFast;
 namespace ThinkItFast.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230906143254_null_img")]
+    partial class null_img
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,6 +37,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -47,6 +51,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -73,6 +78,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -89,6 +95,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -124,6 +131,7 @@ namespace ThinkItFast.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChoiceID"));
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -137,6 +145,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -159,6 +168,7 @@ namespace ThinkItFast.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamID"));
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -174,6 +184,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -197,6 +208,7 @@ namespace ThinkItFast.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionID"));
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -213,6 +225,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -303,6 +316,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -318,6 +332,7 @@ namespace ThinkItFast.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
+                        .IsRequired()
                         .HasColumnType("varchar(200)");
 
                     b.Property<DateTime?>("ModifiedOn")

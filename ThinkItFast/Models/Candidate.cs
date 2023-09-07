@@ -28,6 +28,6 @@ namespace ThinkItFast.Models
         public string Password { get; set; }
 
         [MaxLength]
-        public string ImgFile { get; set; }
+        public string? ImgFile { get; set; }
     }
 }

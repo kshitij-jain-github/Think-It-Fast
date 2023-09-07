@@ -18,7 +18,7 @@ namespace ThinkItFast.ViewModel
         [Required]
         [Display(Name = "Candidate ID")]
         public string Candidate_ID { get; set; }
-        public string ImgFile { get; set; }
+        public string? ImgFile { get; set; }
         public IFormFile file { get; set; }
     }
 }
