@@ -17,6 +17,49 @@
         html, body, h1, h2, h3, h4, h5 {
             font-family: "Open Sans", sans-serif
         }
+
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+            z-index:-1;
+        }
+
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: #FFF;
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: #6C63AC;
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, #5D54A4, #6A679E);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: #7E7BB9;
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+
     </style>
 </head>
 <body>
@@ -74,7 +117,12 @@
             @RenderBody()
         </main>
     </div>
-
+    <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
     <!-- Footer -->
     <footer class="w3-container w3-theme-d3 w3-padding-16">
         <marquee direction="left"><h6>Things to remember ! The test is not official, it's just a nice way to see how much you know, or don't know, about the skill.</h6></marquee>

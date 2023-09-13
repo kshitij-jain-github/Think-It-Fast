@@ -25,4 +25,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\UploadedFiles\Image\" />
+    <Folder Include="wwwroot\UploadedFiles\Video\" />
+  </ItemGroup>
+
 </Project>
